@@ -1,0 +1,50 @@
+/* Search Results Container */
+.search-results-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Grid Layout for Cards */
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Use auto-fill */
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+    max-width: 1000px; /* Adjust width to prevent excessive spacing */
+    margin: auto; /* Center the grid */
+}
+
+
+/* Individual Card */
+.flower-card {
+    width: 250px; /* Fixed card width */
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+}
+
+/* Image Styling */
+.flower-card img {
+    width: 100%;
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensures image fits properly */
+    border-radius: 8px;
+}
+
+/* Text Styling */
+.flower-card h3 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.flower-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 3px 0;
+}

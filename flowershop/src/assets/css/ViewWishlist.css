@@ -1,0 +1,92 @@
+/* Wishlist.css */
+.wishlist-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .wishlist-header {
+    margin-bottom: 30px;
+  }
+  
+  .wishlist-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .wishlist-header p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .wishlist-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+  }
+  
+  .flower-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+  
+  .flower-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flower-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .flower-details {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .flower-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .flower-details p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .flower-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .icon-link,
+  .remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+  
+  .icon-link:hover,
+  .remove-button:hover {
+    color: #ff6b6b;
+  }
+  
+  .empty-wishlist {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 50px;
+  }

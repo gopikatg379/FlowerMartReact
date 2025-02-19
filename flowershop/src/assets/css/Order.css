@@ -1,0 +1,76 @@
+/* Main container */
+.shipping-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light background */
+    font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.shipping-title {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form container */
+.shipping-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* Labels */
+.shipping-label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Input fields */
+.shipping-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Total price */
+.shipping-total {
+    margin-top: 20px;
+    color: #444;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Place Order button */
+.shipping-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.shipping-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.shipping-button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}

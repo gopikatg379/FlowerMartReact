@@ -1,0 +1,177 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;  /* Removes underline */
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    padding :10px;
+  }
+  
+  .nav-links a:hover {
+    color: green;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container input {
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .user-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+  /* Main Container */
+.profile-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar (Vertical Menubar) */
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Image */
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #ddd;
+}
+
+/* Profile Name */
+.profile-name {
+  font-size: 1.5rem;         /* Set size for the name */
+  font-weight: bold;         /* Make the name bold */
+  margin-bottom: 0;        /* Add some space below the name */
+  text-transform: uppercase; /* Ensure the name is uppercase */
+}
+.profile-role {
+  font-size: 1rem;           /* Set size for the role */
+  color: #555;               /* Set color for the role */
+  margin-top: 0;             /* Remove top margin (if any) */
+}
+/* Sidebar Menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu li{
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu li:hover {
+  background-color: #e0e0e0;
+}
+.profile-container {
+  display: flex;
+  min-height: 100vh;
+}
+/* Profile Content */
+.profile-content {
+  flex: 1;
+  padding: 20px;
+}
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.profile-name {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.search-container button {
+  background: #4CAF50;
+  border: none;
+  cursor: pointer;
+  padding: 7px 12px;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+  margin:10px
+}
+
+.search-container button:hover {
+  background: #45a049;
+}
+
+.search-container i {
+  color: white;
+  font-size: 16px;
+}
