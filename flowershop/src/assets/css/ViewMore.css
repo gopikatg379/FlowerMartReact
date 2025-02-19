@@ -82,7 +82,27 @@
 .wishlist-icon.wishlist-active {
   color: red;
 }
-
+.delete-btn {
+  background-color: rgb(149, 11, 11);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.update-btn{
+  background-color: rgb(64, 122, 7);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .card {
