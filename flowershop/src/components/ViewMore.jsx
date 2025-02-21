@@ -87,7 +87,7 @@ const ViewMore = () => {
         ):(
           <div>
             <button className='delete-btn' onClick={handleDelete}>Delete</button>
-            <button className='update-btn'>Update</button>
+            <Link to={`/update/${data.flower_id}`}><button className='update-btn'>Update</button></Link>
           </div>
         )}
       </div>

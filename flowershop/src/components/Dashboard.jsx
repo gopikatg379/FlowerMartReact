@@ -62,7 +62,7 @@ const Dashboard = () => {
       x: {
         title: {
           display: true,
-          text: 'Flower Name',
+          text: 'Category',
         },
       },
     },

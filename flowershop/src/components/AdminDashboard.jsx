@@ -3,8 +3,11 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import { Link,Outlet } from 'react-router-dom'
 import Footer from './Footer'
+import '../assets/css/AdminDashboard.css'
 const AdminDashboard = () => {
     const [data,setData]=useState({})
+    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
     const fetchData = async()=>{
         try{
             const token = localStorage.getItem("access_token");
@@ -19,6 +22,9 @@ const AdminDashboard = () => {
             console.log("There was an error",error)
         }
     }
+    const toggleCategory = () => {
+      setIsCategoryOpen(!isCategoryOpen);
+    };
     useEffect(()=>{
         fetchData()
     },[])
@@ -43,6 +49,17 @@ const AdminDashboard = () => {
             </li>
             <li>
               <Link to='/admin/profile/view/order' style={{color:'black',textDecoration:'none'}}>View Orders</Link>
+            </li>
+            <li>
+              <span onClick={toggleCategory} style={{ cursor: "pointer", fontWeight: "bold" }}>
+                Category ▼
+              </span>
+              {isCategoryOpen && (
+                <ul style={{ listStyle: "none", paddingLeft: "20px" }}>
+                  <li><Link to="/admin/profile/add/category">Add Category</Link></li>
+                  <li><Link to="/admin/profile/view/category">View Category</Link></li>
+                </ul>
+              )}
             </li>
           </ul>
         </div>

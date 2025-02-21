@@ -18,6 +18,9 @@ import AdminDashboard from './components/AdminDashboard';
 import Order from './components/Order';
 import ViewOrder from './components/ViewOrder';
 import MyOrders from './components/MyOrders';
+import UpdateFlower from './components/UpdateFlower';
+import ViewCategory from './components/ViewCategory';
+import AddCategory from './components/AddCategory';
 function App() {
 
   return (
@@ -39,6 +42,8 @@ function App() {
           <Route path='dashboard' element={<Dashboard/>}></Route>
           <Route path="add" element={<Add />} />
           <Route path='view/order' element={<ViewOrder/>}></Route>
+          <Route path='add/category' element={<AddCategory/>}></Route>
+          <Route path='view/category' element={<ViewCategory/>}></Route>
         </Route>
         <Route path="/search" element={<SearchResults />} />
         <Route path="/cart/:id" element={<AddCart />} />
@@ -47,6 +52,9 @@ function App() {
         <Route path='/wishlist/:id' element={<AddWishlist/>}></Route>
         <Route path='/delete/:id' element={<DeleteWishlist/>}></Route>
         <Route path='/order' element={<Order/>}></Route>
+        <Route path='/update/:id' element={<UpdateFlower/>}></Route>
+        
+        
       </Routes>
     </>
   )

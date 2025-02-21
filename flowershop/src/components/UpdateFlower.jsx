@@ -1,20 +1,25 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../assets/css/Add.css'
-import Navbar from './Navbar';
 
-const Add = () => {
+const UpdateFlower = () => {
+    const {id}=useParams()
     const navigate = useNavigate()
-    const[category,setCategory]=useState([])
-    const [data,setData] = useState({
-        "flower_name":"",
-        "color":"",
-        "price":0,
-        "description":"",
-        "image":null,
-        "category_id": ""
-    })
+    const [data,setData] = useState({})
+    const fetchData = async()=>{
+        try{
+            const token = localStorage.getItem("access_token");
+            const response = await axios.get(`http://localhost:8080/flowerShop/get/one/${id}`,{
+                headers: {
+                     Authorization: `Bearer ${token}`,
+                }
+            })
+            setData(response.data)
+        }catch(error){
+            console.log("There was an error",error)
+        }
+    }
     const InputData = (e)=>{
         let name = e.target.name;
         let value = e.target.value;
@@ -28,10 +33,10 @@ const Add = () => {
             setData(newData)
         }
     }
-    const fetchData = async()=>{
+    const replaceData = async()=>{
         try{
             const token = localStorage.getItem("access_token");
-            const response = await axios.post("http://localhost:8080/flowerShop/add/flower",data,{
+            const response = await axios.put(`http://localhost:8080/flowerShop/update/${id}`,data,{
                 headers: {
                      Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
@@ -42,49 +47,17 @@ const Add = () => {
             console.log("There was an error",error)
         }
     }
-    const fetchCategory=async()=>{
-      try{
-        const token = localStorage.getItem('access_token')
-        const response = await axios.get("http://localhost:8080/category/get",{
-          headers:{
-            Authorization:`Bearer ${token}`
-          }
-        })
-        console.log("category",response.data)
-        setCategory(response.data)
-      }catch(error){
-        console.log("There was an error",error)
-      }
-    }
-    const submitData = ()=>{
-        fetchData()
-    }
     useEffect(()=>{
-      fetchCategory()
+        fetchData()
     },[])
+    const submitData = ()=>{
+        replaceData()
+    }
   return (
     <>
     <div className="container2 mt-5 mb-4">
       <h2 className="mb-4">Add a New Flower</h2>
       <form >
-      <div className="form-group">
-          <label htmlFor="category">Category</label>
-          <select
-            className="form-control"
-            id="category"
-            name="category_id"
-            value={data.category_id}
-            onChange={InputData}
-            required
-          >
-          <option value="">Select a Category</option>
-            {category.map((x) => (
-            <option key={x.categoryId} value={x.categoryId}>
-              {x.categoryName}
-            </option>
-            ))}
-          </select>
-        </div>
         <div className="form-group1">
           <label htmlFor="flower_name">Flower Name:</label>
           <input
@@ -154,4 +127,4 @@ const Add = () => {
   )
 }
 
-export default Add
+export default UpdateFlower
