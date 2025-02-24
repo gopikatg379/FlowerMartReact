@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 const AddCategory = () => {
     const[data,setData]=useState({
-        "categoryName":""
+        "categoryName":"",
+        "description":""
     })
     const navigate = useNavigate()
     const InputData=(e)=>{
@@ -40,6 +41,14 @@ const AddCategory = () => {
           type="text"
           name="categoryName"
           value={data.categoryName}
+          onChange={InputData}
+          required
+        />
+        <label>Description:</label>
+        <input
+          type="text"
+          name="description"
+          value={data.description}
           onChange={InputData}
           required
         />

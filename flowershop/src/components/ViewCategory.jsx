@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
-
+import { Link } from 'react-router-dom';
+import '../assets/css/ViewCategory.css'
 const ViewCategory = () => {
     const [data,setData] = useState([])
     const fetchData=async()=>{
@@ -17,6 +18,20 @@ const ViewCategory = () => {
             console.log("There was an error",error)
         }
     }
+    const handleDelete=async(categoryId)=>{
+        try{
+          const token = localStorage.getItem('access_token')
+          const response = await axios.delete(`http://localhost:8080/category/delete/${categoryId}`,{
+            headers:{
+              Authorization:`Bearer ${token}`
+            }
+          })
+          setData(data.filter(category => category.categoryId !== categoryId));
+          
+        }catch(error){
+          console.log("There was an error",error)
+        }
+    }
     useEffect(()=>{
         fetchData()
     },[])
@@ -27,6 +42,9 @@ const ViewCategory = () => {
       <tr>
         <th>#</th>
         <th>Category Name</th>
+        <th>Description</th>
+        <th>Delete</th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
@@ -34,6 +52,9 @@ const ViewCategory = () => {
         <tr key={index}>
           <td>{index + 1}</td>
           <td>{x.categoryName}</td>
+          <td>{x.description}</td>
+          <td><button className='btn2' onClick={()=>handleDelete(x.categoryId)}>Delete</button></td>
+          <Link to={`/admin/profile/category/update/${x.categoryId}`}><button className='btn2'style={{marginTop:'10px',backgroundColor:'green'}}>Update</button></Link>
         </tr>
       ))}
     </tbody>

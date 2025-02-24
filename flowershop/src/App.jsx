@@ -21,6 +21,7 @@ import MyOrders from './components/MyOrders';
 import UpdateFlower from './components/UpdateFlower';
 import ViewCategory from './components/ViewCategory';
 import AddCategory from './components/AddCategory';
+import UpdateCategory from './components/UpdateCategory';
 function App() {
 
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path='view/order' element={<ViewOrder/>}></Route>
           <Route path='add/category' element={<AddCategory/>}></Route>
           <Route path='view/category' element={<ViewCategory/>}></Route>
+          <Route path='category/update/:id' element={<UpdateCategory/>}></Route>
         </Route>
         <Route path="/search" element={<SearchResults />} />
         <Route path="/cart/:id" element={<AddCart />} />

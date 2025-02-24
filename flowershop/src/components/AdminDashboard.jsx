@@ -42,13 +42,13 @@ const AdminDashboard = () => {
           <span className="profile-name">{data.name ? data.name.toUpperCase() : "Loading..."}</span>
           <p className="profile-role">{data.role}</p>
           <ul className="menu">
+            <li >
+              <Link to='/admin/profile/dashboard' style={{textDecoration:'none'}}>Dashboard</Link></li>
             <li>
-              <Link to='/admin/profile/dashboard' style={{color:'black',textDecoration:'none'}}>Dashboard</Link></li>
-            <li>
-              <Link to='/admin/profile/add' style={{color:'black',textDecoration:'none'}}>Add</Link>
+              <Link to='/admin/profile/add' style={{textDecoration:'none'}}>Add</Link>
             </li>
             <li>
-              <Link to='/admin/profile/view/order' style={{color:'black',textDecoration:'none'}}>View Orders</Link>
+              <Link to='/admin/profile/view/order' style={{textDecoration:'none'}}>View Orders</Link>
             </li>
             <li>
               <span onClick={toggleCategory} style={{ cursor: "pointer", fontWeight: "bold" }}>

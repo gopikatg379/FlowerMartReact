@@ -1,0 +1,59 @@
+/* ViewCategory.css */
+
+.table-container1 {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(38, 176, 61, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 12px;
+}
+
+.table th {
+    background-color: #296315;
+    color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.btn2 {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn2:hover {
+    opacity: 0.8;
+}
+
+.btn2:nth-child(1) {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn2:nth-child(2) {
+    background-color: #007bff;
+    color: white;
+}
+
+.link-button {
+    text-decoration: none;
+}

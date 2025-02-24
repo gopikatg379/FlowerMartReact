@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import '../assets/css/Home.css'
@@ -6,10 +6,12 @@ import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import { Alert } from 'react-bootstrap'; 
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Home = () => {
     const [data,setData] = useState([])
     const[error,setError]=useState(null)
+    const scrollRef = useRef(null);
     const fetchData = async()=>{
         try{
             const token = localStorage.getItem("access_token");
@@ -32,10 +34,22 @@ const Home = () => {
     useEffect(()=>{
         fetchData()
     },[])
+    const scrollLeft = () => {
+      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+  };
+
+  // Scroll right function
+  const scrollRight = () => {
+      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+  };
   return (
     <>
-    <Navbar></Navbar>
-    <div className="card1-container">
+    <Navbar/>
+    <div className="scroll-container">
+                <button className="scroll-btn left" onClick={scrollLeft}>
+                    <FaChevronLeft />
+                </button>
+    <div className="card1-container"  ref={scrollRef}>
       
       {error && <Alert variant="danger">{error}</Alert>}
     {data.map((x) => (
@@ -54,7 +68,14 @@ const Home = () => {
     </div>
   ))}  
 </div>
-<Footer></Footer>
+<button className="scroll-btn right" onClick={scrollRight}>
+                    <FaChevronRight />
+                </button>
+            </div>
+            <div>
+              <h1>Search By category</h1>
+            </div>
+<Footer/>
 </>
   )
 }

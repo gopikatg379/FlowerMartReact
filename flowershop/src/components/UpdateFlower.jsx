@@ -6,6 +6,7 @@ import '../assets/css/Add.css'
 const UpdateFlower = () => {
     const {id}=useParams()
     const navigate = useNavigate()
+    const[category,setCategory]=useState([])
     const [data,setData] = useState({})
     const fetchData = async()=>{
         try{
@@ -24,6 +25,8 @@ const UpdateFlower = () => {
         let name = e.target.name;
         let value = e.target.value;
         let files = e.target.files;
+        console.log(name);
+        console.log(value);
         let newData;
         if(files){
             newData = {...data,[name]:files[0]}
@@ -33,6 +36,23 @@ const UpdateFlower = () => {
             setData(newData)
         }
     }
+    const fetchCategory=async()=>{
+      try{
+        const token = localStorage.getItem('access_token')
+        const response = await axios.get("http://localhost:8080/category/get",{
+          headers:{
+            Authorization:`Bearer ${token}`
+          }
+        })
+        console.log("category",response.data)
+        setCategory(response.data)
+      }catch(error){
+        console.log("There was an error",error)
+      }
+    }
+    useEffect(()=>{
+          fetchCategory()
+        },[])
     const replaceData = async()=>{
         try{
             const token = localStorage.getItem("access_token");
@@ -58,6 +78,24 @@ const UpdateFlower = () => {
     <div className="container2 mt-5 mb-4">
       <h2 className="mb-4">Add a New Flower</h2>
       <form >
+      <div className="form-group">
+          <label htmlFor="category">Category</label>
+          <select
+            className="form-control"
+            id="category"
+            name="category_id"
+            value={data.category_id}
+            onChange={InputData}
+            required
+          >
+          <option value="">Select a Category</option>
+            {category.map((x) => (
+            <option key={x.categoryId} value={x.categoryId}>
+              {x.categoryName}
+            </option>
+            ))}
+          </select>
+        </div>
         <div className="form-group1">
           <label htmlFor="flower_name">Flower Name:</label>
           <input

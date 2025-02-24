@@ -1,21 +1,62 @@
 /* Container for the cards */
+.scroll-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+}
+
 .card1-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px; /* Adds space between cards */
-    margin: 30px;
-    margin-bottom: 100px;
-  }
-  /* Styling for individual cards */
-  .card1 {
-    width: 17rem; 
-    margin-bottom: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; 
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Hide scrollbar */
+  -ms-overflow-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.card1 {
+  flex: 0 0 auto;
+  width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+.card1-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome */
+}
+/* Scroll buttons */
+.scroll-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 20px;
+}
+
+.scroll-btn.left {
+  left: 5px;
+}
+
+.scroll-btn.right {
+  right: 5px;
+}
+
+.scroll-btn:hover {
+  background: #555;
+}
+
   /* On hover, increase card size and add a deeper shadow */
   .card1:hover {
     transform: translateY(-5px);
