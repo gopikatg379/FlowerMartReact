@@ -1,0 +1,59 @@
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.category-container2 {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures all cards stay in one row */
+    overflow-x: auto; /* Adds horizontal scrolling if needed */
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+}
+
+.category-container2::-webkit-scrollbar {
+    height: 8px;
+}
+
+.category-container2::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 4px;
+}
+
+.category-card {
+    flex: 0 0 auto; /* Prevents cards from shrinking */
+    width: 250px; /* Adjust card width as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-card .card-body {
+    text-align: center;
+}
+
+.category-card .btn-primary {
+    background-color: #218829;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.category-card .btn-primary:hover {
+    background-color: #388722;
+}

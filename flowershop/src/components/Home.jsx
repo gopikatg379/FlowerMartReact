@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import { Alert } from 'react-bootstrap'; 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import AllCategories from './AllCategories';
 
 const Home = () => {
     const [data,setData] = useState([])
@@ -52,7 +53,7 @@ const Home = () => {
     <div className="card1-container"  ref={scrollRef}>
       
       {error && <Alert variant="danger">{error}</Alert>}
-    {data.map((x) => (
+      {data.map((x) => (
       <div className="card1" key={x.flower_id}>
         <img
           className="card1-img"
@@ -68,13 +69,13 @@ const Home = () => {
     </div>
   ))}  
 </div>
-<button className="scroll-btn right" onClick={scrollRight}>
+      <button className="scroll-btn right" onClick={scrollRight}>
                     <FaChevronRight />
                 </button>
-            </div>
-            <div>
-              <h1>Search By category</h1>
-            </div>
+</div>
+<div>
+  <AllCategories/>
+</div>
 <Footer/>
 </>
   )

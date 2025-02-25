@@ -36,21 +36,6 @@ const ViewOrder = () => {
             console.log("There was an error",error)
         }
     }
-    const handleCancel = async(orderId)=>{
-        try{
-            const token = localStorage.getItem('access_token')
-            const response = await axios.delete(`http://localhost:8080/order/cancel_order/${orderId}`,{
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            alert("Order cancelled successfully!");
-            navigate('/admin/profile/view/order')
-            console.log("Order Cancelled:", response.data);
-        }catch(error){
-            console.log("There was an error",error)
-        }
-    }
     useEffect(() => {
         fetchData()
     }, [])
@@ -76,7 +61,7 @@ const ViewOrder = () => {
                             <Button variant="primary" onClick={() => handleToggleOrderDetails(idx)}>
                                 {showOrder === idx ? 'Hide Order Details' : 'View Order'}
                             </Button>
-                            <button onClick={()=>handleDelete(idx)}>Delete Order</button>
+                            
                         </div>
 
                         {/* Display Order Details inside the card */}

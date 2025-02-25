@@ -25,6 +25,7 @@ const AddCart = () => {
                     flowerId: id, 
                 },
             })
+            console.log(response.data)
             navigate('/view/cart')
         }catch(error){
             console.log("There was an error",error)

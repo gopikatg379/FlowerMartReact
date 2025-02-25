@@ -37,12 +37,12 @@ const MyProfile = () => {
           <span className="profile-name">{data.name ? data.name.toUpperCase() : "Loading..."}</span>
           <ul className="menu">
             <li>
-              <Link to='/profile/dashboard' style={{color:'black',textDecoration:'none'}}>Dashboard</Link></li>
+              <Link to='/profile/dashboard' style={{color:'white',textDecoration:'none'}}>Dashboard</Link></li>
             <li>
-              <Link to='/profile/view/wishlist' style={{color:'black',textDecoration:'none'}}>Wishlist</Link>
+              <Link to='/profile/view/wishlist' style={{color:'white',textDecoration:'none'}}>Wishlist</Link>
             </li>
             <li>
-              <Link to='/profile/my/orders' style={{color:'black',textDecoration:'none'}}>My Orders</Link>
+              <Link to='/profile/my/orders' style={{color:'white',textDecoration:'none'}}>My Orders</Link>
             </li>
           </ul>
         </div>

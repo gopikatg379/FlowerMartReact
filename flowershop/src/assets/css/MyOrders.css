@@ -1,0 +1,20 @@
+button.cancel-btn {
+    background-color: #dc3545; /* Red color for cancel action */
+    color: white; /* White text */
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button.cancel-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+button.cancel-btn:disabled {
+    background-color: #6c757d; /* Greyed out when disabled */
+    cursor: not-allowed;
+}

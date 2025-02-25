@@ -1,14 +1,27 @@
-.footer {
-    background-color: #f8f8f8;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 14px;
-    color: #333;
-    margin-top: 20px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    margin-top: 20px;
+/* Ensure full page height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
+/* Main container to push footer down */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Content should take up available space */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Footer should always be at the bottom */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

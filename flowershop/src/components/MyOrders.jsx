@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Table, Card, Button } from "react-bootstrap";
-
+import '../assets/css/MyOrders.css'
 const MyOrders = () => {
     const [data,setData] = useState([])
     const [showOrder, setShowOrder] = useState(null);
@@ -14,6 +14,21 @@ const MyOrders = () => {
                 }
             })
             setData(response.data)
+        }catch(error){
+            console.log("There was an error",error)
+        }
+    }
+    const handleCancel = async(orderId)=>{
+        try{
+            const token = localStorage.getItem('access_token')
+            const response = await axios.delete(`http://localhost:8080/order/cancel_order/${orderId}`,{
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            alert("Order cancelled successfully!");
+            navigate('/admin/profile/view/order')
+            console.log("Order Cancelled:", response.data);
         }catch(error){
             console.log("There was an error",error)
         }
@@ -44,6 +59,7 @@ const MyOrders = () => {
                                     Status: {item.status}
                                 </strong>
                             </Card.Text>
+                            
                             <Button variant="primary" onClick={() => handleToggleOrderDetails(idx)}>
                                 {showOrder === idx ? 'Hide Order Details' : 'View Order'}
                             </Button>
@@ -74,7 +90,10 @@ const MyOrders = () => {
                                         </tr>
                                     ))}
                                 </tbody>
-                                
+                                {item.status !== "Cancelled" && (
+                                    <button className="cancel-btn" onClick={() => handleCancel(item.orderId)}>Cancel Order</button>
+                                )}
+
                             </Table>
                         )}
                     </Card.Body>

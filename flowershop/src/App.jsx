@@ -22,6 +22,7 @@ import UpdateFlower from './components/UpdateFlower';
 import ViewCategory from './components/ViewCategory';
 import AddCategory from './components/AddCategory';
 import UpdateCategory from './components/UpdateCategory';
+import OneCategory from './components/OneCategory';
 function App() {
 
   return (
@@ -55,7 +56,7 @@ function App() {
         <Route path='/delete/:id' element={<DeleteWishlist/>}></Route>
         <Route path='/order' element={<Order/>}></Route>
         <Route path='/update/:id' element={<UpdateFlower/>}></Route>
-        
+        <Route path='/view/category/:id' element={<OneCategory/>}></Route>
         
       </Routes>
     </>
