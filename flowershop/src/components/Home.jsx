@@ -5,7 +5,7 @@ import '../assets/css/Home.css'
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
-import { Alert } from 'react-bootstrap'; 
+import { Alert,Carousel  } from 'react-bootstrap'; 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import AllCategories from './AllCategories';
 
@@ -43,9 +43,22 @@ const Home = () => {
   const scrollRight = () => {
       scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
   };
+
+  const carouselImages = [
+    { src: "/src/assets/images/flower1.jpg", alt: "Flower 1" },
+    { src: "/src/assets/images/flower4.jpg", alt: "Flower 2" },
+    { src: "/src/assets/images/flower3.jpg", alt: "Flower 3" }
+];
   return (
     <>
     <Navbar/>
+    <Carousel className="custom-carousel">
+        {carouselImages.map((image, index) => (
+          <Carousel.Item key={index}>
+              <img className="d-block w-100" src={image.src} alt={image.alt} />
+          </Carousel.Item>
+          ))}
+        </Carousel>
     <div className="scroll-container">
                 <button className="scroll-btn left" onClick={scrollLeft}>
                     <FaChevronLeft />
@@ -63,7 +76,7 @@ const Home = () => {
         <div className="card1-body">
           <h5 className="card1-title">{x.flower_name}</h5>
           <h6 className="card1-subtitle">{x.color}</h6>
-          <p className="card1-text">{x.price}/-</p>
+          <p className="card1-text">{x.price}/KG</p>
           <Link to={`/view/${x.flower_id}`}><button className="btn1-login">View More</button></Link>
         </div>
     </div>

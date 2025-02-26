@@ -204,3 +204,12 @@
 .category-card .btn-primary:hover {
   background-color: rgb(22, 156, 34);
 }
+.custom-carousel {
+  max-height: 700px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.custom-carousel-img {
+  height: 600px; /* Set your preferred height */
+  object-fit: cover; /* Ensures the image scales properly without distortion */
+}

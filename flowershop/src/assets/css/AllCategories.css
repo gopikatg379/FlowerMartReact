@@ -1,4 +1,4 @@
-.container2 {
+.container3 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -10,7 +10,7 @@
     margin-bottom: 20px;
 }
 
-.category-container2 {
+.category-container3 {
     display: flex;
     flex-wrap: nowrap; /* Ensures all cards stay in one row */
     overflow-x: auto; /* Adds horizontal scrolling if needed */
@@ -20,11 +20,11 @@
     scrollbar-color: white transparent;
 }
 
-.category-container2::-webkit-scrollbar {
+.category-container3::-webkit-scrollbar {
     height: 8px;
 }
 
-.category-container2::-webkit-scrollbar-thumb {
+.category-container3::-webkit-scrollbar-thumb {
     background: white;
     border-radius: 4px;
 }

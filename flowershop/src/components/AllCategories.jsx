@@ -26,9 +26,9 @@ const AllCategories = () => {
   return (
     <div>
       <h1 className="text-center my-4">Search By Category</h1>
-      <div className="category-container2">
+      <div className="category-container3">
         {category.map((x, index) => (
-          <Card key={index} className="category-card">
+          <Card key={index} className="category-card" style={{height:'300px'}}>
             <Card.Body>
               <Card.Title>{x.categoryName}</Card.Title>
               <Card.Text>{x.description}</Card.Text>
